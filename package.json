@@ -1,0 +1,44 @@
+{
+  "name": "prs-helper",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/main.js",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs-dev:build": "UMI_ENV=dev dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "package": "ncc build src/main.js -o dist",
+    "users": "node ./script/update-users.js",
+    "main": "node ./src/main.js",
+    "ver": "node ./script/update-version.js"
+  },
+  "author": "xrkffgg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/actions-cool/PRs-helper.git",
+    "branch": "main"
+  },
+  "keywords": [
+    "actions",
+    "PR",
+    "helper",
+    "github"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "@octokit/rest": "^18.0.12",
+    "dayjs": "^1.9.7",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.25.1",
+    "common-tags": "^1.8.0",
+    "dotenv": "^8.2.0",
+    "dumi": "^1.1.1",
+    "gh-pages": "^3.1.0"
+  }
+}
